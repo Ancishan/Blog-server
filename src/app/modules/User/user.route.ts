@@ -1,10 +1,11 @@
-import express from "express";
-import { userController } from "./user.controller";
+import express from 'express';
+import auth from '../../middleware/Auth';
+import USER_ROLES from './user.const';
+import { userController } from './user.controller';
 
 
-const UserRouter = express.Router();
+const router = express.Router();
 
-// Login route
-UserRouter.post('/register', userController.createUser);
+router.route('/').get(auth(USER_ROLES.admin), userController.createUser);
 
-export default UserRouter;
+export const UserRoutes = router;
