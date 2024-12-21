@@ -9,7 +9,7 @@ import handleCastErr from '../errors/handleCastError';
 import handleDuplicateErr from '../errors/handleDuplicateError';
 
 const globalErrHandler: ErrorRequestHandler = (err, req, res, next) => {
-  let statusCode = 500;
+  let statusCode = 400;
   let message = 'Something went wrong';
   let errSources: TErrSources = [
     {
