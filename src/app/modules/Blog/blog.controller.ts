@@ -1,5 +1,6 @@
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
+
+import catchAsync from '../Utils/catchAsync';
+import sendResponse from '../Utils/sendRequest';
 import BlogServices from './blog.service';
 
 const getAllBlogs = catchAsync(async (req, res) => {
@@ -9,7 +10,7 @@ const getAllBlogs = catchAsync(async (req, res) => {
     statusCode: 200,
     success: true,
     result: result.length,
-    message: 'Blogs fetched sucessfully!',
+    message: 'Get all Blog SuccessFully',
     data: result,
   });
 });
@@ -21,7 +22,7 @@ const getABlog = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message: 'Blog fetched sucessfully!',
+    message: 'Blog fetched SuccessFully!',
     data: result,
   });
 });
@@ -47,7 +48,7 @@ const updateABlog = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message: 'Blog updated sucessfully!',
+    message: 'Blog updated SuccessFully!',
     data: result,
   });
 });
@@ -61,7 +62,7 @@ const deleteABlog = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message: 'Blog deleted sucessfully!',
+    message: 'Blog deleted SuccessFully!',
     data: result,
   });
 });

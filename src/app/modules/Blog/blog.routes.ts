@@ -1,9 +1,10 @@
+import auth from '../../middleware/Auth';
+import USER_ROLES from '../User/user.const';
+import validateRequest from '../../middleware/validateRequest';
 import BlogControllers from './blog.controller';
-import validateRequest from '../../middlewares/validateRequest';
 import BlogValidations from './blog.validation';
 import express from 'express';
-import auth from '../../middlewares/auth';
-import USER_ROLES from '../user/user.constant';
+
 
 const router = express.Router();
 

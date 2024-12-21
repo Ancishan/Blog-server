@@ -1,9 +1,11 @@
 import { JwtPayload } from 'jsonwebtoken';
-import { IBlog } from './blog.interface';
 import Blog from './blog.model';
-import User from '../user/user.model';
+import User from '../User/user.model';
+import { IBlog } from './blog.interface';
 import AppError from '../../errors/AppError';
 import QueryBuilder from '../../builder/QueryBuilder';
+
+
 
 const getAllBlogsFromDB = async (query: Record<string, unknown>) => {
   const blogQuery = new QueryBuilder(Blog.find().populate('author'), query)

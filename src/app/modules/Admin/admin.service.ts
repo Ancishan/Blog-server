@@ -1,7 +1,9 @@
 import { JwtPayload } from 'jsonwebtoken';
-import User from '../user/user.model';
+
 import AppError from '../../errors/AppError';
-import Blog from '../blog/blog.model';
+import User from '../User/user.model';
+import Blog from '../Blog/blog.model';
+
 
 const blockUserInDB = async (id: string, userData: JwtPayload) => {
   //CHECK IF THE ADMIN IS EXISTS
